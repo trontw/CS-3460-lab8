@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Collatz {
@@ -5,8 +6,16 @@ public class Collatz {
     private static int [] sol;//Array of solutions
     private static int x = 0;
     private static Random rand = new Random();
-
-    public static int collatzLength(int n) {
+    /*
+     * To build a table of solutions, use the formulas below
+     * and then feed into them numbers iteratively, and store
+     * the output to an array indexed by the interative input.
+     * 
+     * Then, instead of calling the collatzLength, you can simply 
+     * input the "range", find it by its index into the table and then return
+     * the corresponding output "length"
+     */
+    public static int collatzCrunch(int n) {
         if (n == 1)
             return n;
         else if (n%2 == 0)
@@ -14,7 +23,20 @@ public class Collatz {
         else if (n%2 == 1)
             n = 3*n + 1;
         else
-            return collatzLength(n);
+            return collatzCrunch(n);
+        return n;
+    }
+    //Build the table here
+    int ans = 0;
+    public void collatzTable(int index){
+        for (int i = 0; i < index; ++i)
+            ans = collatzCrunch(i);
+        // Now with this index, build an array using the answer (ans)
+        // to the problem pointed to by the index.
+        //Array table = new Array(index);
+    }
+    // Call the length by its index into the Table
+    public static int collatzLength(int n){
         return n;
     }
 
@@ -39,7 +61,7 @@ public class Collatz {
         int range = collatzRange(a, b);
 		System.out.print("The number with the maximum Collatz length in the range: "+range);
 		
-
+        int test = 837799;
 		int length = collatzLength(range);
 		System.out.println("\nIts Collatz length: "+ length);
 	}
