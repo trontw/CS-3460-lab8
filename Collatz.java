@@ -1,9 +1,8 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Collatz {
     
-    private static int [] sol;//Array of solutions
+    private static int [] table;//Array of solutions
     private static int x = 0;
     private static Random rand = new Random();
     /*
@@ -26,18 +25,59 @@ public class Collatz {
             return collatzCrunch(n);
         return n;
     }
-    //Build the table here
-    int ans = 0;
-    public void collatzTable(int index){
-        for (int i = 0; i < index; ++i)
-            ans = collatzCrunch(i);
+
+    public static int collatzTable(int n){
+        if (n< 0) return 0;
+        if (table[n] != 0) return table[n];
+        table [n] = collatzTable(n);
+        return table [n];
+    }
+
+    //Fill the table here
+    public static void collatzFill(int index) {
+        //System.out.println("index INPUT is "+index);
+        if (index < 0) return; 
+        //if (index == 0 || index == 1) table = new int[collatzCrunch(index)];
+        try {
+        for (int i = 2; i < table.length; ++i){
+                // Collatz for 15 is length 46, means need to loop and count
+                // from the number calling collatzCrunch until zero
+                table[i] = countCrunches(i);
+                //need to call collatzCrunch until the output is zero, counting each loop
+                //System.out.println("Collatz for "+i+" is length "+table[i]);
+            }
+        }
+        catch (Exception e) {
+            System.out.println("\nException caught");
+        }
+        
+    }
+
+    public static int countCrunches(int i) {
+        int count = 1;
+        //System.out.println("input is i = "+i);
+        while (i > 1) {
+            int t = collatzCrunch(i);
+            i = t;
+            //System.out.println("Collatz for i is = "+t);
+            ++count;
+            //System.out.println("Count in loop is "+count);
+        }
+        return count;
+    }
         // Now with this index, build an array using the answer (ans)
         // to the problem pointed to by the index.
         //Array table = new Array(index);
-    }
+    
     // Call the length by its index into the Table
     public static int collatzLength(int n){
-        return n;
+        if (n < 0) return 0;
+        if (n != 0 || n != 1 && table[n] != 0) return table[n];
+        //for (int i = 2;i < table.length; ++i) {
+            //if (table[i] == n)
+        return table[n];
+        //}
+        //return 0;
     }
 
     public static int collatzRange(int min, int max) {
@@ -60,10 +100,17 @@ public class Collatz {
         // to get the Collatz length.
         int range = collatzRange(a, b);
 		System.out.print("The number with the maximum Collatz length in the range: "+range);
-		
-        int test = 837799;
-		int length = collatzLength(range);
-		System.out.println("\nIts Collatz length: "+ length);
+		//Create Collatz Table
+        table = new int[range + 1];//Array of solutions
+        table [0] = 0;
+        table [1] = 1;
+        collatzFill(range);
+
+
+        //int test = 837799;
+        //int test = 15;
+		int result = collatzLength(range);
+		System.out.println("\nIts Collatz length: "+ result);
 	}
 
 
