@@ -6,7 +6,7 @@
 // how many coins to get:
 // 72 - (5: 25, 25, 10, 10, 1, 1)
 //
-//Use the Greedy Algo.
+//Use the Greedy Algo. 
 //
 // 72 - 25, repeat, 47 - 25, 22 - 10\
 public class Coins {
