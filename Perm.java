@@ -25,7 +25,7 @@ public class Perm {
 				
 				permute(f + 1);
 			
-				// Unuse item items[i]
+				// Unuse item temp[i]
 				temp[i] = perm[f];
 				perm[f] = -1;
             } 
@@ -33,15 +33,14 @@ public class Perm {
 		}		
 		
 	}
-		
-	
+
 	public static void main(String [] args) {
 		//perm = new int[n + 1];
 		//rem = new int[n + 1];
 		perm = new int[n];
 		temp = new int[n];
 		//Initialize: 
-		//items becomes array [0, 1, 2, 3, ...n]
+		//temp becomes array [0, 1, 2, 3, ...n]
 		//perm  becomes array [-1, -1, -1, ..-1]
 		for (int i = 0; i < n; ++i) {
 			temp[i] = i + 1;

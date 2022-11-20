@@ -1,1 +1,244 @@
 Enter the number of Queens: 
+check_row r = 0
+check_row col = 0
+check_row temp[r][i] = 0
+Before setting to 1
+temp Table: 
+ 1  0  0  0 
+ 0  0  0  0 
+ 0  0  0  0 
+ 0  0  0  0 
+----------------
+Solution Table: 
+ 0  -1  -1  -1 
+ -1  -1  -1  -1 
+ -1  -1  -1  -1 
+ -1  -1  -1  -1 
+----------------
+Row after inserting '1' is 0
+temp table AFTER Placement
+ 1  -1  -1  -1 
+ -1  -1  0  0 
+ -1  0  -1  0 
+ -1  0  0  -1 
+----------------
+check_row r = 1
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 1
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 1
+check_row col = 2
+check_row temp[r][i] = 0
+Before setting to 1
+temp Table: 
+ 1  -1  -1  -1 
+ -1  -1  1  0 
+ -1  0  -1  0 
+ -1  0  0  -1 
+----------------
+Solution Table: 
+ 0  -1  -1  -1 
+ -1  -1  0  -1 
+ -1  -1  -1  -1 
+ -1  -1  -1  -1 
+----------------
+Row after inserting '1' is 1
+temp table AFTER Placement
+ 1  -1  -1  -1 
+ -1  -1  1  -1 
+ -1  -1  -1  -1 
+ -1  0  -1  -1 
+----------------
+check_row r = 2
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 2
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 2
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 2
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 4
+Inside backupQ --------------- REVERSE TIME
+check_row r = 2
+check_row c = 3
+check_row temp[2][3] = -1
+Backtracked to here: 
+ row = 1
+ col = 2
+Solution[r][i] = 0
+Solution Table: 
+ 0  -1  -1  -1 
+ -1  -1  0  -1 
+ -1  -1  -1  -1 
+ -1  -1  -1  -1 
+----------------
+AFTER BACKTRAX....Solution Table
+ 0  -1  -1  -1 
+ -1  -1  -1  0 
+ -1  -1  -1  -1 
+ -1  -1  -1  -1 
+----------------
+AFTER BACKTRAX....temp Table
+ 1  -1  -1  -1 
+ -1  -1  -1  1 
+ -1  0  -1  -1 
+ -1  0  -1  -1 
+----------------
+check_row r = 0
+check_row col = 0
+check_row temp[r][i] = 1
+check_row r = 0
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 0
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 0
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 1
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 1
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 1
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 1
+check_row col = 3
+check_row temp[r][i] = 1
+check_row r = 2
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 2
+check_row col = 1
+check_row temp[r][i] = 0
+Before setting to 1
+temp Table: 
+ 1  -1  -1  -1 
+ -1  -1  -1  1 
+ -1  1  -1  -1 
+ -1  0  -1  -1 
+----------------
+Solution Table: 
+ 0  -1  -1  -1 
+ -1  -1  -1  0 
+ -1  0  -1  -1 
+ -1  -1  -1  -1 
+----------------
+Row after inserting '1' is 2
+temp table AFTER Placement
+ 1  -1  -1  -1 
+ -1  -1  -1  1 
+ -1  1  -1  -1 
+ -1  -1  -1  -1 
+----------------
+check_row r = 3
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 3
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 3
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 3
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 4
+PLEASE TELL ME THE n VALUE = 4
+End of table reached ===NO SOLUTION=== STOP i = 3 r = 3
+check_row r = 2
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 2
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 1
+check_row col = 3
+check_row temp[r][i] = 1
+check_row r = 0
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 0
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 0
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 1
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 1
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 1
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 1
+check_row col = 3
+check_row temp[r][i] = 1
+check_row r = 2
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 2
+check_row col = 1
+check_row temp[r][i] = 1
+check_row r = 2
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 2
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 3
+check_row col = 0
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 1
+check_row r = 3
+check_row col = 1
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 2
+check_row r = 3
+check_row col = 2
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 3
+check_row r = 3
+check_row col = 3
+check_row temp[r][i] = -1
+Place holder -1 found and neg_count = 4
+PLEASE TELL ME THE n VALUE = 4
+End of table reached ===NO SOLUTION=== STOP i = 3 r = 3
+Number of N-Queens is = 0

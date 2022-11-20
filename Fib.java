@@ -23,7 +23,6 @@ an Array, where they can be retrieved more easily than recreating them.
 public class Fib {
 	private static int [] table;
 
-	//change all int to bigInteger (or at least long)
 	private static int fib(int n) {
 		if (n < 0) return 0;
 		if (n == 0 || n == 1 || table[n] != 0) return table[n];//capture base case
@@ -38,7 +37,7 @@ public class Fib {
 		table = new int[n + 1];
 		table [0] = 0;
 		table[1] = 1;
-		
+
 		int x = fib(n);
 		System.out.println("The "+n+"th Fib number is "+x);
 	}
